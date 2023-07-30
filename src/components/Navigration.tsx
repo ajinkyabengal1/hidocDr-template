@@ -1,4 +1,3 @@
-import React from "react";
 import { Avatar, Box, Button } from "@mui/material";
 import logo from "../assets/images/logo.png";
 import { AiOutlineTrophy } from "react-icons/ai";

@@ -1,10 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Grid, Typography, Button, Card, Box } from "@mui/material";
-const Section = (props: any) => {
+import { Data, Drug, Survey } from "../../interface";
+interface MainLayoutProps {
+  data: Data;
+}
+const Section: React.FC<MainLayoutProps> = (props) => {
   const { data } = props;
-  const boxRef = useRef<any>();
+  const boxRef = useRef<HTMLDivElement | null>();
   const [selectedDrug, setselectedDrug] = useState("ALLEGRA");
-  const [info, setinfo] = useState<any>({});
+  const [info, setinfo] = useState<Drug>({});
 
   useEffect(() => {
     if (info?.drugName) {
@@ -51,7 +55,7 @@ const Section = (props: any) => {
               }}
               ref={boxRef}
             >
-              {data?.drugData?.map((item: any) => (
+              {data?.drugData?.map((item: Drug) => (
                 <Button
                   onClick={() => setinfo(item)}
                   sx={{
@@ -129,7 +133,7 @@ const Section = (props: any) => {
           </Typography>
         </Grid>
         <Grid item sm={12} md={3}>
-          {data?.exploreMore?.survey?.map((item: any) => (
+          {data?.exploreMore?.survey?.map((item: Survey) => (
             <>
               <h2>{item?.surveyName}</h2>
               <Typography>{item?.metaDescription}</Typography>

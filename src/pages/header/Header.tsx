@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navigration from "../../components/Navigration";
 import { Typography, Box, Grid, Button } from "@mui/material";
 import Search from "../../components/Search";
-
-const Header = (props: any) => {
-  const { data } = props;
+import {Data} from '../../interface'
+interface MainLayoutProps {
+  data: Data;
+}
+const Header: React.FC<MainLayoutProps> = (props) => {
+  
+  const { data } = props as { data: Data };
 
   console.log(data);
   const [selectedButton, setSelectedButton] = useState<string>("");
@@ -48,7 +52,7 @@ const Header = (props: any) => {
           alias quos quo optio molestiae.
         </Grid>
         <Grid item container md={6}>
-          {buttonArr.map((item: any) => (
+          {buttonArr.map((item: string) => (
             <Grid
               item
               md={4}

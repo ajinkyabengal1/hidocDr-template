@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { useRef } from "react";
+import  { useRef } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 const Search = () => {
   const ref: any = useRef<HTMLInputElement>();

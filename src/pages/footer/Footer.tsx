@@ -1,5 +1,4 @@
-import { Box, Grid, Typography, IconButton } from "@mui/material";
-import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
 import logo from "../../assets/images/logo-dark.png";
 import { TiSocialFacebook, TiSocialLinkedin } from "react-icons/ti";
 import { SiYoutube } from "react-icons/si";
